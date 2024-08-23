@@ -1,0 +1,6 @@
+# OS junk files
+*.DS_Store
+
+# data files
+TARGET_350-450/
+my_notebooks/
