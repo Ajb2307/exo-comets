@@ -1,5 +1,5 @@
 # OS junk files
-*.DS_Store
+.DS_Store
 
 # data files
 TARGET_350-450/
