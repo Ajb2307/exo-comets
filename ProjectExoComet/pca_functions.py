@@ -25,11 +25,18 @@ def pca_estimate(pca, principal_components):
 
     return estimated_df
 
+def variantion_true_false(row, snr):
+    """ return True if the row has a variation larger than 0.1"""
+    if max(abs(row)) > snr:
+        return True
+    else:
+        return False
+
 def vaiations(scaled_data, estimated_df, df, snr):
     """ find the variations in the data and return the scaled data with variations larger than the snr"""
     difference_df = pd.DataFrame(scaled_data - estimated_df)
     index_list = []
     for index, row in difference_df.iterrows():
-        if max(abs(row)) > snr:
+        if variantion_true_false(row, snr):
             index_list.append(index)
     return index_list
